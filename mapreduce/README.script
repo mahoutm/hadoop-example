@@ -1,0 +1,10 @@
+# how to run a mapreduce of python ?
+# method I : using hadoop-streaming
+hadoop jar hadoop-streaming-2.2.0.2.1.0.0-92.jar \
+	-files mapper.py,reducer.py \
+	-mapper mapper.py \
+	-reducer reducer.py \
+	-input <input files> -output <output directory>
+
+
+
