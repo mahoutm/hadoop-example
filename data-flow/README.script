@@ -1,0 +1,14 @@
+# Processing
+# 1. collecting a data using flume
+flume-ng agent--conf conf --conf-file flume-base.conf --name agent
+
+# 2. data definition using hcatalog
+hcat -e "CREATE TABLE koala (cnt bigint, wd string)"
+
+# 3. word count using pig
+pig -f wordcount.pig 
+
+# 4. query a result set using hive
+hive <<EOF
+SELECT wd, cnt FROM koala ORDER BY cnt DESC LIMIT 10;
+EOF
