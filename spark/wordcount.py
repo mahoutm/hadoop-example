@@ -32,5 +32,5 @@ if __name__ == "__main__":
    	output = wordCounts.collect()
     	for (word, count) in output:
         	print "%s: %i" % (word, count)
-	# saveAsTextFile('hdfs://sandbox.hortonworks.com:8020/tmp/out')
+	# wordCounts.saveAsTextFile('hdfs://sandbox.hortonworks.com:8020/tmp/out')
     	sc.stop()
